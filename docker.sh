@@ -6,4 +6,5 @@ vi dockerfile
   RUN apt-get update && apt-get install -y firefox
   CMD ["firefox"]
  sudo docker build . -t firefox:latest
+ xhost +
  sudo docker run --rm -it --name firefox -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro firefox:latest
